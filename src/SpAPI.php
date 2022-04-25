@@ -1,6 +1,6 @@
 <?php
 
-	namespace keiths\spapi;
+	namespace yuenkokeith\spapi;
 	
 	class ApiLoader 
 	{	
