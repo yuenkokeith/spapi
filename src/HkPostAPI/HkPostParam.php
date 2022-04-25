@@ -1,6 +1,5 @@
 <?php
 
-	//namespace SpAPI\HkPost\HkPostParam;
 	namespace yuenkokeith\spapi\HkPost\HkPostParam;
 	/*
 	class SoapClient {
