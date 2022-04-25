@@ -4,12 +4,12 @@
 	"require": {
         "php": ">=5.4"
     }
-	"authors": [
+	"authors": {
         {
             "name": "Keith Sin",
             "email": "yuenkokeith@yahoo.com.hk"
         }
-    ],
+    },
     "autoload": {
         "psr-4": {
             "yuenkokeith\\spapi\\": "src"
