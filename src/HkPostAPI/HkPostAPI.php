@@ -1,8 +1,7 @@
 <?php
 
-	//namespace SpAPI\HkPost;
 	namespace yuenkokeith\spapi;
-	//require_once('HkPostAPI\HkPostParam.php');
+	require_once('HkPostParam.php');
 	use yuenkokeith\spapi\HkPost\HkPostParam;
 	
 	class api01Req {
@@ -16,7 +15,7 @@
 		}
 	}
 
-	class HkPost extends \SpAPI\SpAPI implements HkPostInterface {
+	class HkPost extends \yuenkokeith\spapi\SpAPI implements HkPostInterface {
 
 		public $tm_created = null;
 		public $tm_expires = null; 
@@ -148,7 +147,7 @@
 		private function __getResultArr()
 		{
 			$objResponse = $this->__getObjResponse();
-			$soapObjToArray = new \SpAPI\HkPost\HkPostParam\SoapObjToArray();
+			$soapObjToArray = new \yuenkokeith\spapi\HkPost\HkPostParam\SoapObjToArray();
 			$soapObjToArray->getTotalPostageReturn($objResponse);
 			$this->result = $soapObjToArray->getResultArr();
 			$this->resultJson = json_encode($this->result);
@@ -157,7 +156,7 @@
 		private function __convertTrackingStatus($callname)
 		{
 			$objResponse = $this->__getObjResponse();
-			$soapObjToArray = new \SpAPI\HkPost\HkPostParam\SoapObjToArray();
+			$soapObjToArray = new \yuenkokeith\spapi\HkPost\HkPostParam\SoapObjToArray();
 			$soapObjToArray->getTotalPostageReturn($objResponse);
 			$trackingStatus = $soapObjToArray->getKeyValue($callname. "Return", 'ttStatus');
 			$this->localTrackingStatus = $this->__doPostageToBexpressLocalTrackingStatus($trackingStatus);
@@ -321,7 +320,7 @@
 		public function getSoapObjResult()
 		{
 			$objResponse = $this->__getObjResponse();
-			$soapObjToArray = new \SpAPI\HkPost\HkPostParam\SoapObjToArray();
+			$soapObjToArray = new \yuenkokeith\spapi\HkPost\HkPostParam\SoapObjToArray();
 			$soapObjToArray->getTotalPostageReturn($objResponse);
 			return $soapObjToArray;
 		}
@@ -485,7 +484,7 @@
 			$this->objResponse = $this->objClient->__soapCall("getAddressPack",array($this->params));
 
 			$objResponse = $this->__getObjResponse();
-			$soapObjToArray = new \SpAPI\HkPost\HkPostParam\SoapObjToArray();
+			$soapObjToArray = new \yuenkokeith\spapi\HkPost\HkPostParam\SoapObjToArray();
 			$soapObjToArray->getTotalPostageReturn($objResponse);
 			$labelResult = $soapObjToArray->getResultArr();
 
@@ -562,7 +561,7 @@
 												$senderEmail, $senderFax, $senderName, $shipCode, $noticeMethod, $smsLang, $mcn,
 												$iPostalStation)
 		{
-			return $param = new \SpAPI\HkPost\HkPostParam\ParamCreateOrder($this->ecshipUsername, $this->hkpid, $this->integratorUsername, $certNumber, $certQty, $countryCode, $creditCardNo, $declarationComments, $dropAndGoFlag, 
+			return $param = new \yuenkokeith\spapi\HkPost\HkPostParam\ParamCreateOrder($this->ecshipUsername, $this->hkpid, $this->integratorUsername, $certNumber, $certQty, $countryCode, $creditCardNo, $declarationComments, $dropAndGoFlag, 
 												$impEmail, $impFaxNo, $impRef, $impTelNo, $insurAmount, $insurTypeCode, $invoiceNumber, $invoiceQty, 
 												$itemCategory, $itemCategoryDesc, $itemNo, $licenceNumber, $mailSize, $mailType, $merchandiserEmail, $nonDeliveryOptions, $payFlag, $permitNo, $pickupOffice, 
 												$products, 
@@ -578,7 +577,7 @@
 											$recipientFax, $recipientName, $recipientPostalNo, $refNo, $satchelTypeCode, $senderAddress,
 											$senderContactNo, $senderCountry, $senderCustRef, $senderEmail, $senderFax, $senderName, $shipCode, $noticeMethod, $smsLang, $mcn)
 		{
-			return $param = new \SpAPI\HkPost\HkPostParam\ParamCreateOrder($this->ecshipUsername, $this->integratorUsername, $certNumber, $certQty, $countryCode, $declarationComments, $impEmail, 
+			return $param = new \yuenkokeith\spapi\HkPost\HkPostParam\ParamCreateOrder($this->ecshipUsername, $this->integratorUsername, $certNumber, $certQty, $countryCode, $declarationComments, $impEmail, 
 											$impFaxNo, $impRef, $impTelNo, $insurAmount, $insurTypeCode, $invoiceNumber, $invoiceQty, $itemCategory, $licenceNumber, $mailType, 
 											$merchandiserEmail, $nonDeliveryOptions, $paidAmt, $products, $recipientAddress, $recipientCity, $recipientContactNo, $recipientEmail, 
 											$recipientFax, $recipientName, $recipientPostalNo, $refNo, $satchelTypeCode, $senderAddress, $senderContactNo, $senderCountry, 
@@ -587,53 +586,53 @@
 
 		public function setGetOrderInfo($orderno)
 		{
-			return $param = new \SpAPI\HkPost\HkPostParam\ParamGetOrderInfo($this->ecshipUsername, $this->integratorUsername, $orderno);
+			return $param = new \yuenkokeith\spapi\HkPost\HkPostParam\ParamGetOrderInfo($this->ecshipUsername, $this->integratorUsername, $orderno);
 		}
 
 		public function setGetTemporaryOrderInfo($orderno)
 		{
-			return $param = new \SpAPI\HkPost\HkPostParam\ParamGetOrderInfo($this->ecshipUsername, $this->integratorUsername, $orderno);
+			return $param = new \yuenkokeith\spapi\HkPost\HkPostParam\ParamGetOrderInfo($this->ecshipUsername, $this->integratorUsername, $orderno);
 		}
 
 		public function setCancelOrder($itemno, $orderno)
 		{
-			return $param = new \SpAPI\HkPost\HkPostParam\ParamCancelOrderInfo($this->ecshipUsername, $this->integratorUsername, $itemno, $orderno);
+			return $param = new \yuenkokeith\spapi\HkPost\HkPostParam\ParamCancelOrderInfo($this->ecshipUsername, $this->integratorUsername, $itemno, $orderno);
 		}
 
 		public function setGetMTTInfo($itemno)
 		{
            
-			return $param = new \SpAPI\HkPost\HkPostParam\ParamGetMTTInfo($this->ecshipUsername, $this->integratorUsername, $itemno);
+			return $param = new \yuenkokeith\spapi\HkPost\HkPostParam\ParamGetMTTInfo($this->ecshipUsername, $this->integratorUsername, $itemno);
 		}
 
 		public function setGetTTInfo($itemno, $lang)
 		{
-			return $param = new \SpAPI\HkPost\HkPostParam\ParamGetTTInfo($this->ecshipUsername, $this->integratorUsername, $itemno, $lang);
+			return $param = new \yuenkokeith\spapi\HkPost\HkPostParam\ParamGetTTInfo($this->ecshipUsername, $this->integratorUsername, $itemno, $lang);
 		}
 
 		public function setGetAddressPack($itemno, $printmode)
 		{
-			return $param = new \SpAPI\HkPost\HkPostParam\ParamGetAddressPack($this->ecshipUsername, $this->integratorUsername, $itemno, $printmode);
+			return $param = new \yuenkokeith\spapi\HkPost\HkPostParam\ParamGetAddressPack($this->ecshipUsername, $this->integratorUsername, $itemno, $printmode);
 		}
 
 		public function setCancelTemporaryOrder($orderno)
 		{
-			return $param = new \SpAPI\HkPost\HkPostParam\ParamCancelTemporaryOrder($this->ecshipUsername, $this->integratorUsername, $orderno);
+			return $param = new \yuenkokeith\spapi\HkPost\HkPostParam\ParamCancelTemporaryOrder($this->ecshipUsername, $this->integratorUsername, $orderno);
 		}
 
 		public function setGetItemNo($searchParam, $searchType, $sortOrder)
 		{
-			return $param = new \SpAPI\HkPost\HkPostParam\ParamGetItemNo($this->ecshipUsername, $this->integratorUsername, $searchParam, $searchType, $sortOrder);
+			return $param = new \yuenkokeith\spapi\HkPost\HkPostParam\ParamGetItemNo($this->ecshipUsername, $this->integratorUsername, $searchParam, $searchType, $sortOrder);
 		}
 
 		public function setGetTotalPostage($countryCode, $insuranceAmount, $insuranceTypeCode, $mailType, $mailSize, $shipCode, $weight)
 		{
-			return $param = new \SpAPI\HkPost\HkPostParam\paramGetTotalPostage($this->ecshipUsername, $this->hkpid, $this->integratorUsername, $countryCode, $insuranceAmount, $insuranceTypeCode, $mailType, $mailSize, $shipCode, $weight);
+			return $param = new \yuenkokeith\spapi\HkPost\HkPostParam\paramGetTotalPostage($this->ecshipUsername, $this->hkpid, $this->integratorUsername, $countryCode, $insuranceAmount, $insuranceTypeCode, $mailType, $mailSize, $shipCode, $weight);
 		}
 
 		public function setGetCOP($itemno)
 		{
-			return $param = new \SpAPI\HkPost\HkPostParam\ParamGetMTTInfo($this->ecshipUsername, $this->integratorUsername, $itemno);
+			return $param = new \yuenkokeith\spapi\HkPost\HkPostParam\ParamGetMTTInfo($this->ecshipUsername, $this->integratorUsername, $itemno);
 		}
 		
 	}
