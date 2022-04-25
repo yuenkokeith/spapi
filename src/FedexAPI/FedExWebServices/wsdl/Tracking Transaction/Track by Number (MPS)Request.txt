@@ -1,0 +1,46 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v12="http://fedex.com/ws/track/v12">
+  <soapenv:Header></soapenv:Header>
+   <soapenv:Body>
+      <v12:TrackRequest>
+         <v12:WebAuthenticationDetail>
+ <v12:UserCredential>
+               <v12:Key>Input Your Information</v12:Key>
+               <v12:Password>Input Your Information</v12:Password>
+            </v12:UserCredential>
+         </v12:WebAuthenticationDetail>
+         <v12:ClientDetail>
+            <v12:AccountNumber>Input Your Information</v12:AccountNumber>
+            <v12:MeterNumber>Input Your Information</v12:MeterNumber>
+            <v12:Localization>
+               <v12:LanguageCode>EN</v12:LanguageCode>
+               <v12:LocaleCode>US</v12:LocaleCode>
+            </v12:Localization>
+         </v12:ClientDetail>
+         <v12:TransactionDetail>
+            <v12:CustomerTransactionId>Track By Number_v12</v12:CustomerTransactionId>
+</v12:TransactionDetail>
+         <v12:Version>
+            <v12:ServiceId>trck</v12:ServiceId>
+            <v12:Major>12</v12:Major>
+            <v12:Intermediate>1</v12:Intermediate>
+            <v12:Minor>0</v12:Minor>
+         </v12:Version>
+         <v12:SelectionDetails>
+            <v12:CarrierCode>FDXE</v12:CarrierCode>
+            <v12:PackageIdentifier>
+               <v12:Type>TRACKING_NUMBER_OR_DOORTAG</v12:Type>
+               <v12:Value>Input Your Information</v12:Value>
+            </v12:PackageIdentifier>
+            <v12:ShipmentAccountNumber> Input Your Information</v12:ShipmentAccountNumber>
+            <v12:SecureSpodAccount>Input Your Information</v12:SecureSpodAccount>
+            <v12:Destination>
+               <v12:StreetLines>Input Your Information</v12:StreetLines>
+               <v12:City>Texas</v12:City>
+               <v12:StateOrProvinceCode>TX</v12:StateOrProvinceCode>
+               <v12:PostalCode>73301</v12:PostalCode>
+               <v12:CountryCode>US</v12:CountryCode>
+            </v12:Destination>
+         </v12:SelectionDetails>
+      </v12:TrackRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
