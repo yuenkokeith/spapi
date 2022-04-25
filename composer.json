@@ -3,7 +3,7 @@
 	"description": "Shipping API library",
 	"require": {
         "php": ">=5.4"
-    }
+    },
 	"authors": {
         {
             "name": "Keith Sin",
