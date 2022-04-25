@@ -7,7 +7,7 @@
 		public static function getAPI($sp_name)
 		{
 			require_once($sp_name. 'API\\' . $sp_name . 'API.php');
-			$class = 'SpAPI\\' . $sp_name . '\\' . $sp_name;
+			$class = 'yuenkokeith\spapi\\' . $sp_name;
 			return new $class;
 		}
 	}
