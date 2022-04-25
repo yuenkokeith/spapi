@@ -2,11 +2,12 @@
 	"name": "yuenkokeith/spapi",
 	"description": "Shipping API library",
 	"require": {
-        "php": ">=5.4"
-    },
-    "autoload": {
-        "psr-4": {
-            "yuenkokeith\\spapi\\": "src"
-        }
-    }
+        	"php": ">=5.4"
+    	},
+   	 "autoload": {
+       	 "psr-4": {
+      	      "yuenkokeith\\spapi\\": "src"
+      	  }
+   	 },
+	"license": "MIT"
 }
