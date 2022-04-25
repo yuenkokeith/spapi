@@ -1,9 +1,9 @@
 <?php
 
 	//namespace SpAPI\HkPost;
-	namespace keiths\spapi;
+	namespace yuenkokeith\spapi;
 	//require_once('HkPostAPI\HkPostParam.php');
-	use keiths\spapi\HkPost\HkPostParam;
+	use yuenkokeith\spapi\HkPost\HkPostParam;
 	
 	class api01Req {
 		function api01Req() 
