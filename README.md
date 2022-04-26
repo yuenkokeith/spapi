@@ -4,10 +4,13 @@ shipping api library
 
 Basic usage
 
-<?php
-  require_once('vendor\autoload.php');	
+
+  	
+	php index file
+	
+	require_once('vendor\autoload.php');	
 	use yuenkokeith\spapi\APiLoader;
 	
 	$api = APiLoader::getAPI('HkPost');
 
-?>
+
